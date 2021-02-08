@@ -1,11 +1,12 @@
 #ifndef __DOUBLE_LINKED_LIST
 #define __DOUBLE_LINKED_LIST
 
-//  DoubleLinkedList.h - Дважды связный список целых чисел
-//
+#include <ostream>
+
 class DoubleLinkedList {
 private:
-    // Тип  Node используется для описания элемента списка, связанного со
+private:
+// Тип  Node используется для описания элемента списка, связанного со
     // следующим с помощью поля next_ и предшествующим с помощью поле prev_
     struct Node         // может использоваться  только в классе DoubleLinkedList
     {
@@ -15,6 +16,30 @@ private:
 
         // Конструктор для создания нового элемента списка.
         Node(int item, Node *next = nullptr, Node *prev = nullptr) : item_(item), next_(next), prev_(prev) {}
+
+        int getItem() const {
+            return item_;
+        }
+
+        void setItem(int item) {
+            item_ = item;
+        }
+
+        Node *getNext() const {
+            return next_;
+        }
+
+        void setNext(Node *next) {
+            next_ = next;
+        }
+
+        Node *getPrev() const {
+            return prev_;
+        }
+
+        void setPrev(Node *prev) {
+            prev_ = prev;
+        }
     };
 
     int count_;         // счетчик числа элементов
@@ -45,13 +70,17 @@ private:
 public:
 
     // Конструктор "по умолчанию" - создание пустого списка
-    DoubleLinkedList() : count_(0), head_(nullptr), tail_(nullptr) {}
+    // https://docs.microsoft.com/ru-ru/cpp/cpp/constructors-cpp?view=msvc-160
+    DoubleLinkedList();
 
     // Конструктор "копирования" – создание копии имеющегося списка
-    DoubleLinkedList(const DoubleLinkedList &src);
+    DoubleLinkedList(const DoubleLinkedList &doubleLinkedList);
+
+    DoubleLinkedList(int count, Node *head, Node *tail);
+
 
     // количество элементов списка
-    int сount() const { return count_; }
+    int getCount() const { return count_; }
 
     // Доступ к информации головного узла списка
     int headItem() const;
@@ -89,6 +118,32 @@ public:
 
     // Деструктор списка
     virtual ~DoubleLinkedList();
+
+    bool operator==(const DoubleLinkedList &rhs) const;
+
+    bool operator!=(const DoubleLinkedList &rhs) const;
+
+    friend std::ostream &operator<<(std::ostream &os, const DoubleLinkedList &list);
+
+    void setCount(int count);
+
+    Node *getHead() const;
+
+    void setHead(Node *head);
+
+    Node *getTail() const;
+
+    void setTail(Node *tail);
+
+//    Copy-and-swap
+    DoubleLinkedList& operator=(const DoubleLinkedList &doubleLinkedList) {
+        if(this != &doubleLinkedList)
+            DoubleLinkedList(doubleLinkedList).swap(*this);
+        return *this;
+    }
+
+    void swap(DoubleLinkedList &doubleLinkedList) noexcept;
+
 };
 
 #endif
