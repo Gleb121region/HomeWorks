@@ -6,13 +6,15 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/Gelog/CLionProjects/untitled1/DoubleLinkedList.h
-ostream
--
-
-C:/Users/Gelog/CLionProjects/untitled1/main.cpp
+C:/Users/Gelog/untitled1/DoubleLinkedList.cpp
+DoubleLinkedList.h
+C:/Users/Gelog/untitled1/DoubleLinkedList.h
 iostream
 -
-DoubleLinkedList.h
-C:/Users/Gelog/CLionProjects/untitled1/DoubleLinkedList.h
+
+C:/Users/Gelog/untitled1/DoubleLinkedList.h
+ostream
+-
+iostream
+-
 

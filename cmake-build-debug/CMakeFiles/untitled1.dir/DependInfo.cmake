@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/Gelog/CLionProjects/untitled1/DoubleLinkedList.cpp" "C:/Users/Gelog/CLionProjects/untitled1/cmake-build-debug/CMakeFiles/untitled1.dir/DoubleLinkedList.cpp.obj"
-  "C:/Users/Gelog/CLionProjects/untitled1/main.cpp" "C:/Users/Gelog/CLionProjects/untitled1/cmake-build-debug/CMakeFiles/untitled1.dir/main.cpp.obj"
+  "C:/Users/Gelog/untitled1/DoubleLinkedList.cpp" "C:/Users/Gelog/untitled1/cmake-build-debug/CMakeFiles/untitled1.dir/DoubleLinkedList.cpp.obj"
+  "C:/Users/Gelog/untitled1/main.cpp" "C:/Users/Gelog/untitled1/cmake-build-debug/CMakeFiles/untitled1.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "MSVC")
 
